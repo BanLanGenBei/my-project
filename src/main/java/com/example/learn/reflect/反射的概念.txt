@@ -1,0 +1,22 @@
+JAVA反射（Reflection）：在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+Java的反射机制是java被称为动态语言的一个关键性质。
+那么反射机制所能实现的功能有：
+1.    只要给定类的全名，即可通过反射获取类的所有信息。
+2.    反射可以在程序运行时获取任意一个对象所属的类对象。
+3.    在运行时可以获取到类中所有属性对象，并对其操作（包括私有属性）。
+4.    在运行时可以获取到类中、父类中所有方法，并调用。
+目前主流的应用框架如Struts2、Hibernate、Spring、SpringMVC等框架的核心全部是利用Java的反射机制来实现的。
+在学习JAVA的反射机制前我们得先了解下JAVA中的几大对象 Class、Constructor、Field、Method
+首先先来看下JAVA中的Class对象
+Class其实就是类的类型，比如字符串类型就是String，整形类型就是Integer，String和Integer类型就是Class。
+Class对象是运行时获取的
+
+Class对象的常用方法介绍：
+getName()    获得类中完整名称
+getDeclaredFields()    获得类中的所有属性
+getDeclaredMethods()     获得类中所有的方法
+getConstructors()     获得类构造方法
+newInstance()     实例化类对象
+注：newInstance()方法为实例化空参数的类对象时使用。
+获取Class对象的有三种方法，我们来通过实例来演示下获取Class对象的三种方式：
+首先我们先来创建一个简单的bean来作为被获取的class对象的类

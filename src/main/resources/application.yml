@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /my_project
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true
+
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      logic-not-delete-value: 1
+      logic-delete-value: 0
+
+# person
+person:
+  name: chenchong
+  age: 22
+# personNew
+personnew:
+  name: zhangsan
+  age: 12
+  number: ${random.int}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  vlaue: ${random.value}
+  greeting: hi,i'm  ${personnew.name}
